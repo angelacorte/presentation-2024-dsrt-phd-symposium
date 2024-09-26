@@ -16,6 +16,6 @@ outputs = ["Reveal"]
 
 <i class="fa-solid fa-computer"></i> Department of Computer Science and Engineering, University of Bologna, Cesena (FC), Italy
 
-<img src="example-background.svg" style="width: 40%"/>
+<img src="../static/example-background.svg" style="width: 40%"/>
 </div>
 

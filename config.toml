@@ -1,4 +1,4 @@
-baseURL = "https://github.com/angelacorte/presentation-2024-dsrt-phd-symposium"
+baseURL = "https://angelacorte.github.io/presentation-2024-dsrt-phd-symposium/"
 languageCode = "en-us"
 title = "Improving the Simulation Performance for Aggregate Programs Through Compiler Plugins"
 disableKinds = ["sitemap", "RSS"]
