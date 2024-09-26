@@ -50,7 +50,7 @@ $linkColor: #2690e7;
 $linkColorHover: lighten( $linkColor, 25% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 $detailBackgroundColor: #dae5e9;
-$logo: url("../example-background-neg.svg");
+$logo: url("../static/example-background.svg");
 
 $heading1Size: 2.2em;
 $heading2Size: 1.6em;
@@ -61,7 +61,7 @@ $heading4Size: 1.0em;
 
 section.has-light-background {
 	$detailBackgroundColor: #bd2b0b !global;
-	$logo: url("../example-background.svg") !global;
+	$logo: url("../static/example-background.svg") !global;
 	&, h1, h4, h5, h6 {
 		color: #095aa6;
 	}
