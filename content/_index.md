@@ -18,4 +18,34 @@ outputs = ["Reveal"]
 
 ---
 
+# Simulations main problems
+
 TODO
+
+---
+
+# Aggregate Computing
+
+TODO    
+
+---
+
+# Main Tools
+
+TODO    
+
+---
+
+# Solution
+
+TODO    
+
+---
+
+# Benchmark
+
+TODO    
+
+---
+
+Insert qr code to Collektive org
