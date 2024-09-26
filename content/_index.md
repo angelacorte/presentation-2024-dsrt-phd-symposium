@@ -1,4 +1,3 @@
-
 +++
 
 title = "Improving the Simulation Performance for Aggregate Programs Through Compiler Plugins"
@@ -9,13 +8,42 @@ outputs = ["Reveal"]
 
 # Improving the Simulation Performance for Aggregate Programs Through Compiler Plugins
 
-[Angela Cortecchia](mailto:angela.cortecchia@unibo.it) <!--<i class="fa-solid fa-computer"></i>-->
+[**Angela Cortecchia**](mailto:angela.cortecchia@unibo.it)</br>
+GARR research fellow & (soon) PhD Student @Unibo
+
+<img src="example-background.svg" style="width: 30%"/>
 
 
-<div style="text-align: center; width: 100%;">
+---
 
-<i class="fa-solid fa-computer"></i> Department of Computer Science and Engineering, University of Bologna, Cesena (FC), Italy
+# Needs in Aggregate Computing simulations
 
-<img src="../static/example-background.svg" style="width: 40%"/>
-</div>
+TODO
 
+---
+
+# What is Aggregate Computing?
+
+TODO
+
+---
+
+# Current tools
+
+TODO
+
+--- 
+
+# A possible solution
+
+TODO
+
+--- 
+
+# Benchmark of the simulations
+
+TODO
+
+--- 
+
+qrcode with link to collektive org
