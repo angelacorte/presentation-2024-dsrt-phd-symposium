@@ -28,6 +28,7 @@
 // @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono');
 
 $backgroundColor: #EFF1ED;
+// $backgroundColor: #000000AA;
 
 $mainColor: #095aa6;
 $headingColor: #4999e4;
@@ -72,6 +73,24 @@ section.has-light-background {
 		color: #0084ff;
 	}
 }
+
+.custom.red {
+    color: #095aa6; /* Colore iniziale */
+    transition: color 0.5s ease;
+}
+
+.reveal .fragment.visible.custom.red {
+    color: #b81f0b !important; /* Cambiamento del colore quando visibile */
+}
+
+p.fragment.fade-out {
+    transition: opacity 0.5s ease; /* Transizione per la scomparsa */
+}
+
+.reveal .fragment.visible p.fragment.fade-out {
+    opacity: 0; /* Scompare il paragrafo */
+}
+
 
 .reveal pre {
 	margin: 1em auto;
