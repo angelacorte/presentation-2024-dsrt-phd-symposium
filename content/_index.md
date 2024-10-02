@@ -21,13 +21,29 @@ GARR research fellow & (soon) PhD Student @UniBo</br>
 
 <img src="./images/acDevices.svg" width=60%>
 
+
 A macro-programming approach that defines the **collective behavior** of a heterogeneous set of devices in a **self-organizing system**.
 <!-- Based on the **Field Calculus**<small>[2]</small>, operates by manipulating distributed data structures called *fields*. -->
+
+Devices self-organize exchanging messages, abstracting from the communication approach thanks to **alignment**
 
 <div>
 <small style="text-align: left">
 [1] Beal, J., Pianini, D., Viroli, M. "Aggregate Programming for the Internet of Things." 2015.</br>
-<!-- [2] Audrito, G., Viroli, M., Damiani, F., Pianini, D., Beal, J. "A Higher-Order Calculus of Computational Fields." 2019. -->
+</small>
+</div>
+
+---
+
+# Alignment<small>[2]</small>
+
+<img src="./images/alignment.svg" width="80%"/>
+
+Devices within the system that execute the same part of the program are **aligned** and capable of communication.
+
+<div>
+<small style="text-align: left;">
+[2] G. Audrito, F. Damiani, M. Viroli, and R. Casadei, “Run-time management of computation domains in field calculus”
 </small>
 </div>
 
@@ -47,20 +63,57 @@ Simulations _must_ be reactive also on high scales.
 
 ---
 
-# Scalability problem
+# Scalability limitation
 
-parla di allineamento
+{{% multicol %}}
+
+{{% col class="text-start" %}}
+Resolvable by using *FCPP* <small>[3]</small>: a tool for developing Aggregate Computing programs.
+
+*FCPP limitations*: 
+- **non-friendly** language;
+- aggregate **base-mechanism not hidden**.
+
+{{% /col %}}
+{{% col %}}
+
+For example
+
+![fcpp](images/fcpp.svg)
+<!-- ```cpp
+//manual alignment
+field<double> f = nbr(CALL, 4.2);
+int n = nbr(CALL, 0, [&](field<int> a){
+    return min_hood(CALL, a)
+});
+``` -->
+{{% /col %}}
+
+{{% /multicol %}}
+
+<div>
+<small style="text-align: left;">
+[3] G. Audrito, and G. Torta, "FCPP to aggregate them all."
+</small>
+</div>
 
 ---
 
 # Alternatives?
 
-- Create a new language: external DSL
-- Hide the problem at runtime
+- Create a new language: **external DSL**
+
+or
+
+- **Hide** the **alignment** at runtime
 
 ---
 
-# Idea
+# External DSL: _Protelis_
+
+---
+
+# Hiding alignment at runtime: _ScaFi_
 
 ---
 
@@ -68,7 +121,7 @@ parla di allineamento
 
 ---
 
-# Compiler plugin
+# Idea: using a _Compiler Plugin_
 
 ---
 
@@ -93,4 +146,9 @@ TODO
 
 It works, we're working on it 
 
-qrcode with link to collektive org
+![qr code to collective repo](images/qr.svg)
+<div style="text-align: center;">
+<p><i class="fab fa-github mr-3" style="color: #095aa6;"></i> <a href="https://github.com/Collektive/collektive">Collektive</a></p>
+</div>
+
+<!-- [Collektive](https://github.com/Collektive/collektive) -->
