@@ -36,10 +36,19 @@ GARR research fellow &amp; (soon) PhD Student @UniBo<br>
 <img src="./images/acDevices.svg" width="60%">
 <p>A macro-programming approach that defines the <strong>collective behavior</strong> of a heterogeneous set of devices in a <strong>self-organizing system</strong>.</p>
 <!-- Based on the **Field Calculus**<small>[2]</small>, operates by manipulating distributed data structures called *fields*. -->
+<p>Devices self-organize exchanging messages, abstracting from the communication approach thanks to <strong>alignment</strong></p>
 <div>
 <small style="text-align: left">
 [1] Beal, J., Pianini, D., Viroli, M. "Aggregate Programming for the Internet of Things." 2015.<br>
-<!-- [2] Audrito, G., Viroli, M., Damiani, F., Pianini, D., Beal, J. "A Higher-Order Calculus of Computational Fields." 2019. -->
+</small>
+</div>
+</section><section>
+<h1 id="alignmentsmall2small">Alignment<small>[2]</small></h1>
+<img src="./images/alignment.svg" width="80%">
+<p>Devices within the system that execute the same part of the program are <strong>aligned</strong> and capable of communication.</p>
+<div>
+<small style="text-align: left;">
+[2] G. Audrito, F. Damiani, M. Viroli, and R. Casadei, “Run-time management of computation domains in field calculus”
 </small>
 </div>
 </section><section>
@@ -50,20 +59,50 @@ GARR research fellow &amp; (soon) PhD Student @UniBo<br>
 <p><strong>Scalability limitation</strong>: <br>challenges in scaling simulations to hundreds or more devices simultaneously.</p>
 <p>Simulations <em>must</em> be reactive also on high scales.</p>
 </section><section>
-<h1 id="scalability-problem">Scalability problem</h1>
-<p>parla di allineamento</p>
+<h1 id="scalability-limitation">Scalability limitation</h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col text-start"><p>Resolvable by using <em>FCPP</em> <small>[3]</small>: a tool for developing Aggregate Computing programs.</p>
+<p><em>FCPP limitations</em>:</p>
+<ul>
+<li><strong>non-friendly</strong> language;</li>
+<li>aggregate <strong>base-mechanism not hidden</strong>.</li>
+</ul>
+</div>
+<div class="col "><p>For example</p>
+<p><img src="images/fcpp.svg" alt="fcpp"></p>
+<!-- ```cpp
+//manual alignment
+field<double> f = nbr(CALL, 4.2);
+int n = nbr(CALL, 0, [&](field<int> a){
+    return min_hood(CALL, a)
+});
+``` -->
+</div>
+</div>
+</div>
+<div>
+<small style="text-align: left;">
+[3] G. Audrito, and G. Torta, "FCPP to aggregate them all."
+</small>
+</div>
 </section><section>
 <h1 id="alternatives">Alternatives?</h1>
 <ul>
-<li>Create a new language: external DSL</li>
-<li>Hide the problem at runtime</li>
+<li>Create a new language: <strong>external DSL</strong></li>
+</ul>
+<p>or</p>
+<ul>
+<li><strong>Hide</strong> the <strong>alignment</strong> at runtime</li>
 </ul>
 </section><section>
-<h1 id="idea">Idea</h1>
+<h1 id="external-dsl-_protelis_">External DSL: <em>Protelis</em></h1>
+</section><section>
+<h1 id="hiding-alignment-at-runtime-_scafi_">Hiding alignment at runtime: <em>ScaFi</em></h1>
 </section><section>
 <h1 id="improving-the-simulation-performance-for-aggregate-programs-through-compiler-plugins-1">Improving the Simulation Performance for Aggregate Programs Through <strong>Compiler Plugins</strong></h1>
 </section><section>
-<h1 id="compiler-plugin">Compiler plugin</h1>
+<h1 id="idea-using-a-_compiler-plugin_">Idea: using a <em>Compiler Plugin</em></h1>
 </section><section>
 <h1 id="current">Current</h1>
 <div>
@@ -77,8 +116,11 @@ GARR research fellow &amp; (soon) PhD Student @UniBo<br>
 </section><section>
 <h1 id="concluding">Concluding</h1>
 <p>It works, we’re working on it</p>
-<p>qrcode with link to collektive org</p>
-</section>
+<p><img src="images/qr.svg" alt="qr code to collective repo"></p>
+<div style="text-align: center;">
+<p><i class="fab fa-github mr-3" style="color: #095aa6;"></i> <a href="https://github.com/Collektive/collektive">Collektive</a></p>
+</div>
+<!-- [Collektive](https://github.com/Collektive/collektive) --></section>
 
   
 
