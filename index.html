@@ -36,19 +36,21 @@ GARR research fellow &amp; (soon) PhD Student @UniBo<br>
 <img src="./images/acDevices.svg" width="60%">
 <p>A macro-programming approach that defines the <strong>collective behavior</strong> of a heterogeneous set of devices in a <strong>self-organizing system</strong>.</p>
 <!-- Based on the **Field Calculus**<small>[2]</small>, operates by manipulating distributed data structures called *fields*. -->
-<p>Devices self-organize exchanging messages, abstracting from the communication approach thanks to <strong>alignment</strong></p>
+<p>Devices self-organize exchanging messages, abstracting from the communication approach thanks to <strong>alignment</strong>.</p>
+<p>Based on the <strong>Field Calculus</strong><small>[2]</small>, operates by manipulating distributed data structures called <em>fields</em>.</p>
 <div>
 <small style="text-align: left">
 [1] Beal, J., Pianini, D., Viroli, M. "Aggregate Programming for the Internet of Things." 2015.<br>
+[2] Audrito, G., Viroli, M., Damiani, F., Pianini, D., Beal, J. "A Higher-Order Calculus of Computational Fields." 2019.
 </small>
 </div>
 </section><section>
-<h1 id="alignmentsmall2small">Alignment<small>[2]</small></h1>
+<h1 id="alignmentsmall3small">Alignment<small>[3]</small></h1>
 <img src="./images/alignment.svg" width="70%">
 <p>Devices within the system that execute the same part of the program are <strong>aligned</strong> and capable of communication.</p>
 <div>
 <small style="text-align: left;">
-[2] G. Audrito, F. Damiani, M. Viroli, and R. Casadei, “Run-time management of computation domains in field calculus”
+[3] G. Audrito, F. Damiani, M. Viroli, and R. Casadei, “Run-time management of computation domains in field calculus”
 </small>
 </div>
 </section><section>
@@ -62,7 +64,7 @@ GARR research fellow &amp; (soon) PhD Student @UniBo<br>
 <h1 id="scalability-limitation">Scalability limitation</h1>
 
 <div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col text-start"><p>Resolvable by using <em>FCPP</em> <small>[3]</small>: a tool for developing Aggregate Computing programs.</p>
+    <div class="row "><div class="col text-start"><p>Resolvable by using <em>FCPP</em> <small>[4]</small>: a tool for developing Aggregate Computing programs.</p>
 <p><em>FCPP limitations</em>:</p>
 <ul>
 <li><strong>non-friendly</strong> language;</li>
@@ -83,7 +85,7 @@ int n = nbr(CALL, 0, [&](field<int> a){
 </div>
 <div>
 <small style="text-align: left;">
-[3] G. Audrito, and G. Torta, "FCPP to aggregate them all."
+[4] G. Audrito, and G. Torta, "FCPP to aggregate them all."
 </small>
 </div>
 </section><section>
@@ -96,7 +98,7 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <li><strong>Hide</strong> the <strong>alignment</strong> at runtime with <strong>internal DSL</strong></li>
 </ul>
 </section><section>
-<h1 id="external-dsl-_protelis_-small4small">External DSL: <em>Protelis</em> <small>[4]</small></h1>
+<h1 id="external-dsl-_protelis_-small5small">External DSL: <em>Protelis</em> <small>[5]</small></h1>
 <p>Java-like external DSL.</p>
 <p>Hides pretty well main aggregate computing mechanisms, such as alignment.</p>
 <p><em>Protelis limitations</em>:</p>
@@ -107,11 +109,11 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <p>Those limitations can be overcome by leveraging on an <strong>internal DSL</strong>.</p>
 <div>
 <small style="text-align: left;">
-[4] D. Pianini, M. Viroli, and J. Beal, “Protelis: practical aggregate programming”
+[5] D. Pianini, M. Viroli, and J. Beal, “Protelis: practical aggregate programming”
 </small>
 </div>
 </section><section>
-<h1 id="internal-dsl-_scafi_-small5small">Internal DSL: <em>ScaFi</em> <small>[5]</small></h1>
+<h1 id="internal-dsl-_scafi_-small6small">Internal DSL: <em>ScaFi</em> <small>[6]</small></h1>
 <p>Scala-based internal DSL.</p>
 <p>Alignment <strong>hidden at runtime</strong> doing stack investigation.</p>
 <p><em>ScaFi limitations</em>:</p>
@@ -121,11 +123,12 @@ int n = nbr(CALL, 0, [&](field<int> a){
 </ul>
 <div>
 <small style="text-align: left;">
-[5] R. Casadei, M. Viroli, G. Aguzzi, and D. Pianini, “Scafi: A scala DSL and toolkit for aggregate programming”
+[6] R. Casadei, M. Viroli, G. Aguzzi, and D. Pianini, “Scafi: A scala DSL and toolkit for aggregate programming”
 </small>
 </div>
 </section><section>
 <h1 id="improving-the-simulation-performance-for-aggregate-programs-through-compiler-plugins-1">Improving the Simulation Performance for Aggregate Programs Through <strong>Compiler Plugins</strong></h1>
+<img src="images/SOTAtable.svg">
 </section><section>
 <h1 id="idea-use-a-_compiler-plugin_">Idea: use a <em>Compiler Plugin</em></h1>
 <p>Annotates the aggregate program on a stack at compile time.</p>
@@ -144,7 +147,7 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <div class="col col-md-8 text-start"><ul>
 <li>Internal DSL in Kotlin Multiplatform;</li>
 <li>Alignment made automatically behind the scene through compiler plugin.</li>
-<li>Linked to the general purpose <em>Alchemist</em> <small>[6]</small> simulator, which can execute also <em>Protelis</em> and <em>ScaFi</em> programs.</li>
+<li>Linked to the general purpose <em>Alchemist</em> <small>[7]</small> simulator, which can execute also <em>Protelis</em> and <em>ScaFi</em> programs.</li>
 </ul>
 <p>First implementation of the prototype DSL used to develop experiments related to the morphogenesis of plants.</p>
 </div>
@@ -152,23 +155,22 @@ int n = nbr(CALL, 0, [&](field<int> a){
 </div>
 <div>
 <small style="text-align: left">
-[6] D. Pianini, S. Montagna, and M. Viroli, “Chemical-oriented simulation of computational systems with ALCHEMIST”
+[7] D. Pianini, S. Montagna, and M. Viroli, “Chemical-oriented simulation of computational systems with ALCHEMIST”
 </small></div><small style="text-align: left">
 </small>
 </section><section>
 <h1 id="improving-the-simulation-performance-for-aggregate-programs-through-compiler-plugins-2"><strong>Improving</strong> the Simulation <strong>Performance</strong> for Aggregate Programs Through Compiler Plugins</h1>
 </section><section>
-<h1 id="benchmark-of-the-simulations">Benchmark of the simulations</h1>
 
 <div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><h3 id="reference-scenario">Reference scenario</h3>
-<p><em>Channel with obstacles</em> <small>[7]</small>:<br>
+    <div class="row "><div class="col "><h2 id="reference-scenario">Reference scenario</h2>
+<p><em>Channel with obstacles</em> <small>[8]</small>:<br>
 an algorithm to build a redundant channel between two points in a meshed network,
 avoiding obstacles and adapting to topology changes.</p>
 <img src="images/channelWithObstacles.png" width="70%">
 <!--  -->
 </div>
-<div class="col "><h3 id="results">Results</h3>
+<div class="col "><h2 id="results">Results</h2>
 <ul>
 <li>External DSLs (<em>Protelis</em>) has performance disadvantages in complex programs, respect to internal DSLs (<em>Collektive</em> &amp; <em>ScaFi</em>);</li>
 <li>Compiler plugin optimizes performance between internal DSLs, thanks to the management of the alignment.</li>
@@ -191,11 +193,11 @@ avoiding obstacles and adapting to topology changes.</p>
 </div>
 <div>
 <small style="text-align: left">
-[7] R. Casadei, G. Fortino, D. Pianini, A. Placuzzi, C. Savaglio, and M. Viroli, “A methodology and simulation-based toolchain for estimating deployment performance of smart collective services at the edge"
+[8] R. Casadei, G. Fortino, D. Pianini, A. Placuzzi, C. Savaglio, and M. Viroli, “A methodology and simulation-based toolchain for estimating deployment performance of smart collective services at the edge"
 </small>
 </div>
 </section><section>
-<h1 id="conclusions">Conclusions</h1>
+<h1 id="conclusion">Conclusion</h1>
 
 <div class="container w-100 m-0 p-0">
     <div class="row "><div class="col col-md-8"><p>This work demonstrates that the technology used within a tool affects program execution time.</p>
@@ -203,7 +205,7 @@ avoiding obstacles and adapting to topology changes.</p>
 <ul>
 <li>Further enhancing for efficient and faster execution across various platforms;</li>
 <li>Create a standard library of aggregate building blocks;</li>
-<li>Expand the tool to the concept of “collective operating systems”.</li>
+<li>Exploit the tool to the concept of “collective operating systems”.</li>
 </ul>
 </div>
 <div class="col "><p><img src="images/qr.svg" alt="qr code to collective repo"></p>
