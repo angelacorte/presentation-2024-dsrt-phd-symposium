@@ -25,17 +25,20 @@ GARR research fellow & (soon) PhD Student @UniBo</br>
 A macro-programming approach that defines the **collective behavior** of a heterogeneous set of devices in a **self-organizing system**.
 <!-- Based on the **Field Calculus**<small>[2]</small>, operates by manipulating distributed data structures called *fields*. -->
 
-Devices self-organize exchanging messages, abstracting from the communication approach thanks to **alignment**
+Devices self-organize exchanging messages, abstracting from the communication approach thanks to **alignment**.
+
+Based on the **Field Calculus**<small>[2]</small>, operates by manipulating distributed data structures called *fields*.
 
 <div>
 <small style="text-align: left">
 [1] Beal, J., Pianini, D., Viroli, M. "Aggregate Programming for the Internet of Things." 2015.</br>
+[2] Audrito, G., Viroli, M., Damiani, F., Pianini, D., Beal, J. "A Higher-Order Calculus of Computational Fields." 2019.
 </small>
 </div>
 
 ---
 
-# Alignment<small>[2]</small>
+# Alignment<small>[3]</small>
 
 <img src="./images/alignment.svg" width="70%"/>
 
@@ -43,7 +46,7 @@ Devices within the system that execute the same part of the program are **aligne
 
 <div>
 <small style="text-align: left;">
-[2] G. Audrito, F. Damiani, M. Viroli, and R. Casadei, “Run-time management of computation domains in field calculus”
+[3] G. Audrito, F. Damiani, M. Viroli, and R. Casadei, “Run-time management of computation domains in field calculus”
 </small>
 </div>
 
@@ -68,7 +71,7 @@ Simulations _must_ be reactive also on high scales.
 {{% multicol %}}
 
 {{% col class="text-start" %}}
-Resolvable by using *FCPP* <small>[3]</small>: a tool for developing Aggregate Computing programs.
+Resolvable by using *FCPP* <small>[4]</small>: a tool for developing Aggregate Computing programs.
 
 *FCPP limitations*: 
 - **non-friendly** language;
@@ -93,7 +96,7 @@ int n = nbr(CALL, 0, [&](field<int> a){
 
 <div>
 <small style="text-align: left;">
-[3] G. Audrito, and G. Torta, "FCPP to aggregate them all."
+[4] G. Audrito, and G. Torta, "FCPP to aggregate them all."
 </small>
 </div>
 
@@ -109,7 +112,7 @@ or
 
 ---
 
-# External DSL: _Protelis_ <small>[4]</small>
+# External DSL: _Protelis_ <small>[5]</small>
 
 Java-like external DSL.
 
@@ -123,13 +126,13 @@ Those limitations can be overcome by leveraging on an **internal DSL**.
 
 <div>
 <small style="text-align: left;">
-[4] D. Pianini, M. Viroli, and J. Beal, “Protelis: practical aggregate programming”
+[5] D. Pianini, M. Viroli, and J. Beal, “Protelis: practical aggregate programming”
 </small>
 </div>
 
 ---
 
-# Internal DSL: _ScaFi_ <small>[5]</small>
+# Internal DSL: _ScaFi_ <small>[6]</small>
 
 Scala-based internal DSL.
 
@@ -141,13 +144,15 @@ Alignment **hidden at runtime** doing stack investigation.
 
 <div>
 <small style="text-align: left;">
-[5] R. Casadei, M. Viroli, G. Aguzzi, and D. Pianini, “Scafi: A scala DSL and toolkit for aggregate programming”
+[6] R. Casadei, M. Viroli, G. Aguzzi, and D. Pianini, “Scafi: A scala DSL and toolkit for aggregate programming”
 </small>
 </div>
 
 ---
 
 # Improving the Simulation Performance for Aggregate Programs Through **Compiler Plugins**
+
+<img src="images/SOTAtable.svg"/>
 
 ---
 
@@ -174,7 +179,7 @@ _Pros_:
 {{% col class="col-md-8 text-start" %}}
 - Internal DSL in Kotlin Multiplatform;
 - Alignment made automatically behind the scene through compiler plugin.
-- Linked to the general purpose _Alchemist_ <small>[6]</small> simulator, which can execute also _Protelis_ and _ScaFi_ programs.
+- Linked to the general purpose _Alchemist_ <small>[7]</small> simulator, which can execute also _Protelis_ and _ScaFi_ programs.
 
 First implementation of the prototype DSL used to develop experiments related to the morphogenesis of plants.
 
@@ -184,7 +189,7 @@ First implementation of the prototype DSL used to develop experiments related to
 
 <div>
 <small style="text-align: left">
-[6] D. Pianini, S. Montagna, and M. Viroli, “Chemical-oriented simulation of computational systems with ALCHEMIST”
+[7] D. Pianini, S. Montagna, and M. Viroli, “Chemical-oriented simulation of computational systems with ALCHEMIST”
 </div>
 </small>
 
@@ -194,14 +199,12 @@ First implementation of the prototype DSL used to develop experiments related to
 
 ---
 
-# Benchmark of the simulations
-
 {{% multicol %}}
 
 {{% col %}}
-### Reference scenario
+## Reference scenario
 
-_Channel with obstacles_ <small>[7]</small>:</br>
+_Channel with obstacles_ <small>[8]</small>:</br>
 an algorithm to build a redundant channel between two points in a meshed network,
 avoiding obstacles and adapting to topology changes.
 
@@ -211,7 +214,7 @@ avoiding obstacles and adapting to topology changes.
 
 {{% col %}}
 
-### Results
+## Results
 
 - External DSLs (_Protelis_) has performance disadvantages in complex programs, respect to internal DSLs (_Collektive_ & _ScaFi_);
 - Compiler plugin optimizes performance between internal DSLs, thanks to the management of the alignment.
@@ -236,13 +239,13 @@ avoiding obstacles and adapting to topology changes.
 
 <div>
 <small style="text-align: left">
-[7] R. Casadei, G. Fortino, D. Pianini, A. Placuzzi, C. Savaglio, and M. Viroli, “A methodology and simulation-based toolchain for estimating deployment performance of smart collective services at the edge"
+[8] R. Casadei, G. Fortino, D. Pianini, A. Placuzzi, C. Savaglio, and M. Viroli, “A methodology and simulation-based toolchain for estimating deployment performance of smart collective services at the edge"
 </small>
 </div>
 
 ---
 
-# Conclusions
+# Conclusion
 
 {{% multicol %}}
 
@@ -253,7 +256,7 @@ This work demonstrates that the technology used within a tool affects program ex
 
 - Further enhancing for efficient and faster execution across various platforms;
 - Create a standard library of aggregate building blocks;
-- Expand the tool to the concept of "collective operating systems".
+- Exploit the tool to the concept of "collective operating systems".
 
 {{% /col %}}
 
