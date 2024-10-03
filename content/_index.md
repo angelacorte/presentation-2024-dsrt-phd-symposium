@@ -37,7 +37,7 @@ Devices self-organize exchanging messages, abstracting from the communication ap
 
 # Alignment<small>[2]</small>
 
-<img src="./images/alignment.svg" width="80%"/>
+<img src="./images/alignment.svg" width="70%"/>
 
 Devices within the system that execute the same part of the program are **aligned** and capable of communication.
 
@@ -105,15 +105,45 @@ int n = nbr(CALL, 0, [&](field<int> a){
 
 or
 
-- **Hide** the **alignment** at runtime
+- **Hide** the **alignment** at runtime with **internal DSL**
 
 ---
 
-# External DSL: _Protelis_
+# External DSL: _Protelis_ <small>[4]</small>
+
+Java-like external DSL.
+
+Hides pretty well main aggregate computing mechanisms, such as alignment.
+
+*Protelis limitations*:
+- being a standalone language, its interpreter and compiler must be **self-maintained**;
+- **slower in complex programs**, due to its compiler.
+
+Those limitations can be overcome by leveraging on an **internal DSL**.
+
+<div>
+<small style="text-align: left;">
+[4] D. Pianini, M. Viroli, and J. Beal, “Protelis: practical aggregate programming”
+</small>
+</div>
 
 ---
 
-# Hiding alignment at runtime: _ScaFi_
+# Internal DSL: _ScaFi_ <small>[5]</small>
+
+Scala-based internal DSL.
+
+Alignment **hidden at runtime** doing stack investigation.
+
+*ScaFi limitations*:
+- still some limitations at alignment and language-level;
+- not very performant, due to alignment management.
+
+<div>
+<small style="text-align: left;">
+[5] R. Casadei, M. Viroli, G. Aguzzi, and D. Pianini, “Scafi: A scala DSL and toolkit for aggregate programming”
+</small>
+</div>
 
 ---
 
@@ -121,34 +151,121 @@ or
 
 ---
 
-# Idea: using a _Compiler Plugin_
+# Idea: use a _Compiler Plugin_
+
+Annotates the aggregate program on a stack at compile time.
+
+Devices with the same annotations in the stack are "aligned" and can communicate.
+
+_Pros_:
+- Expressivity untouched;
+- No overhead of the classic approaches.
 
 ---
 
-# Current 
+# Meet **Collektive**
 
+{{% multicol %}}
+
+{{% col %}}
+<img src="images/collektive-logo.svg" width="60%">
+{{% /col %}}
+
+{{% col class="col-md-8 text-start" %}}
+- Internal DSL in Kotlin Multiplatform;
+- Alignment made automatically behind the scene through compiler plugin.
+- Linked to the general purpose _Alchemist_ <small>[6]</small> simulator, which can execute also _Protelis_ and _ScaFi_ programs.
+
+First implementation of the prototype DSL used to develop experiments related to the morphogenesis of plants.
+
+{{% /col %}}
+
+{{% /multicol %}}
 
 <div>
 <small style="text-align: left">
-[3] D. Pianini, S. Montagna, and M. Viroli, “Chemical-oriented simulation of computational systems with ALCHEMIST,”
+[6] D. Pianini, S. Montagna, and M. Viroli, “Chemical-oriented simulation of computational systems with ALCHEMIST”
 </div>
 </small>
 
 ---
 
-# Benchmark of the simulations
-
-TODO
+# **Improving** the Simulation **Performance** for Aggregate Programs Through Compiler Plugins
 
 ---
 
-# Concluding
+# Benchmark of the simulations
 
-It works, we're working on it 
+{{% multicol %}}
 
+{{% col %}}
+### Reference scenario
+
+_Channel with obstacles_ <small>[7]</small>:</br>
+an algorithm to build a redundant channel between two points in a meshed network,
+avoiding obstacles and adapting to topology changes.
+
+<img src="images/channelWithObstacles.png" width="70%"/>
+<!--  -->
+{{% /col %}}
+
+{{% col %}}
+
+### Results
+
+- External DSLs (_Protelis_) has performance disadvantages in complex programs, respect to internal DSLs (_Collektive_ & _ScaFi_);
+- Compiler plugin optimizes performance between internal DSLs, thanks to the management of the alignment.
+
+<img src="images/channel.svg" width="72%"/>
+
+<!-- <div class="r-stack">
+  <img
+    class="fragment current-visible fade-out"
+    data-fragment-index="0"
+    src="images/channelWithObstacles.png"
+  />
+  <img
+    class="fragment"
+    data-fragment-index="1"
+    src="images/channel.svg"    
+  />
+</div> -->
+{{% /col %}}
+
+{{% /multicol %}}
+
+<div>
+<small style="text-align: left">
+[7] R. Casadei, G. Fortino, D. Pianini, A. Placuzzi, C. Savaglio, and M. Viroli, “A methodology and simulation-based toolchain for estimating deployment performance of smart collective services at the edge"
+</small>
+</div>
+
+---
+
+# Conclusions
+
+{{% multicol %}}
+
+{{% col class="col-md-8" %}}
+This work demonstrates that the technology used within a tool affects program execution time.
+
+### Future works
+
+- Further enhancing for efficient and faster execution across various platforms;
+- Create a standard library of aggregate building blocks;
+- Expand the tool to the concept of "collective operating systems".
+
+{{% /col %}}
+
+{{% col %}}
 ![qr code to collective repo](images/qr.svg)
 <div style="text-align: center;">
 <p><i class="fab fa-github mr-3" style="color: #095aa6;"></i> <a href="https://github.com/Collektive/collektive">Collektive</a></p>
 </div>
+{{% /col %}}
+
+{{% /multicol %}}
+
+
 
 <!-- [Collektive](https://github.com/Collektive/collektive) -->
