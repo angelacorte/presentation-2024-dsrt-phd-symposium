@@ -42,11 +42,11 @@ Based on the **Field Calculus**<small>[2]</small>, operates by manipulating dist
 
 <img src="./images/alignment.svg" width="70%"/>
 
-Devices within the system that execute the same part of the program are **aligned** and capable of communication.
+Devices within the system that execute the same part of the Abstract Syntax Tree are **aligned** and capable of communication.
 
 <div>
 <small style="text-align: left;">
-[3] G. Audrito, F. Damiani, M. Viroli, and R. Casadei, “Run-time management of computation domains in field calculus”
+[3] G. Audrito, M. Viroli, F. Damiani, D. Pianini and J. Beal, “A Higher-Order Calculus of Computational Fields”
 </small>
 </div>
 
@@ -58,24 +58,37 @@ Devices within the system that execute the same part of the program are **aligne
 
 # Simulating _Aggregate Computing_ systems
 
+{{% multicol %}}
+
+{{% col class="col-md-8" %}}
 Simulations are part of the **development cycle**.
 
-**Scalability limitation**: </br>challenges in scaling simulations to hundreds or more devices simultaneously.
+**Scalability limitation**: </br>challenges in scaling simulations to thousands or more devices simultaneously.
 
-Simulations _must_ be reactive also on high scales.
+Performance is paramount.
+{{% /col %}}
+
+{{% col %}}
+![simulation](images/simulation.webp)
+{{% /col %}}
+
+{{% /multicol %}}
+
+
 
 ---
 
-# Scalability limitation
+# Low level language: _FCPP_ <small>[4]</small>
 
 {{% multicol %}}
 
 {{% col class="text-start" %}}
-Resolvable by using *FCPP* <small>[4]</small>: a tool for developing Aggregate Computing programs.
+Made for low-consumption devices.
+Expected to be fast in simulations.
 
 *FCPP limitations*: 
-- **non-friendly** language;
-- aggregate **base-mechanism not hidden**.
+- **Non-friendly** language;
+- Aggregate **base-mechanism not hidden**.
 
 {{% /col %}}
 {{% col %}}
@@ -104,22 +117,55 @@ int n = nbr(CALL, 0, [&](field<int> a){
 
 # Alternatives?
 
-- Create a new language: **external DSL**
+{{< frag c="## Build a custom language!" >}}
 
-or
+<!-- - Create a new language: **external DSL** -->
+<!-- or -->
+<!-- - **Hide** the **alignment** at runtime with **internal DSL** -->
 
-- **Hide** the **alignment** at runtime with **internal DSL**
+---
+
+# Domain Specific Language (DSL)
+
+{{% multicol %}}
+
+{{% col  %}}
+## External DSL
+
+- Self-contained language with custom syntax and semantics;
+- Can be tailored to specific performance or scalability requirements;
+- Harder to integrate with existing systems (needs custom tooling);
+- Thougher learning curve.
+
+{{% /col %}}
+
+{{% col class="col-md-1"%}}
+### or
+{{% /col %}}
+
+{{% col %}}
+## Internal DSL
+
+- Built on top of a host language;
+- Takes advantage of its features, tools, and ecosystem.
+- Reduced learning curve.
+- Performances tied to the host language.
+
+{{% /col %}}
+
+
+{{% /multicol %}}
 
 ---
 
 # External DSL: _Protelis_ <small>[5]</small>
 
-Java-like external DSL.
+Java-like standalone language.
 
-Hides pretty well main aggregate computing mechanisms, such as alignment.
+Hides main aggregate computing mechanisms, such as alignment.
 
 *Protelis limitations*:
-- being a standalone language, its interpreter and compiler must be **self-maintained**;
+<!-- - being a standalone language, its interpreter and compiler are not ma -->
 - **slower in complex programs**, due to its compiler.
 
 Those limitations can be overcome by leveraging on an **internal DSL**.
@@ -134,6 +180,10 @@ Those limitations can be overcome by leveraging on an **internal DSL**.
 
 # Internal DSL: _ScaFi_ <small>[6]</small>
 
+{{% multicol %}}
+
+{{% col class="text-start" %}}
+
 Scala-based internal DSL.
 
 Alignment **hidden at runtime** doing stack investigation.
@@ -141,6 +191,18 @@ Alignment **hidden at runtime** doing stack investigation.
 *ScaFi limitations*:
 - still some limitations at alignment and language-level;
 - not very performant, due to alignment management.
+{{% /col %}}
+
+{{% col %}}
+
+For example 
+
+![scafi](images/scafi.svg)
+{{% /col %}}
+
+
+{{% /multicol %}}
+
 
 <div>
 <small style="text-align: left;">
@@ -152,7 +214,7 @@ Alignment **hidden at runtime** doing stack investigation.
 
 # Improving the Simulation Performance for Aggregate Programs Through **Compiler Plugins**
 
-<img src="images/SOTAtable.svg"/>
+<img src="images/SOTAtable.pdf"/>
 
 ---
 
@@ -181,7 +243,7 @@ _Pros_:
 - Alignment made automatically behind the scene through compiler plugin.
 - Linked to the general purpose _Alchemist_ <small>[7]</small> simulator, which can execute also _Protelis_ and _ScaFi_ programs.
 
-First implementation of the prototype DSL used to develop experiments related to the morphogenesis of plants.
+First implementation of the prototype DSL used to develop experiments related to the morphogenesis of plants<small>[8]</small>.
 
 {{% /col %}}
 
@@ -189,7 +251,8 @@ First implementation of the prototype DSL used to develop experiments related to
 
 <div>
 <small style="text-align: left">
-[7] D. Pianini, S. Montagna, and M. Viroli, “Chemical-oriented simulation of computational systems with ALCHEMIST”
+[7] D. Pianini, S. Montagna, and M. Viroli, “Chemical-oriented simulation of computational systems with ALCHEMIST”;</br>
+[8] A. Cortecchia, D. Pianini, G. Ciatto, and R. Casadei, "An Aggregate Vascular Morphogenesis Controller for Engingeered Self-Organising Spatial Structures".
 </div>
 </small>
 
@@ -208,7 +271,9 @@ _Channel with obstacles_ <small>[8]</small>:</br>
 an algorithm to build a redundant channel between two points in a meshed network,
 avoiding obstacles and adapting to topology changes.
 
-<img src="images/channelWithObstacles.png" width="70%"/>
+<iframe width="70%" height=70%" loading="eager" autoplay="true" src="images/channel.mov" ></iframe>
+
+<!-- <img src="images/channelWithObstacles.png" width="70%"/> -->
 <!--  -->
 {{% /col %}}
 
