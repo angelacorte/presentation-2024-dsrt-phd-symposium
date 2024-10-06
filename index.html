@@ -47,28 +47,36 @@ GARR research fellow &amp; (soon) PhD Student @UniBo<br>
 </section><section>
 <h1 id="alignmentsmall3small">Alignment<small>[3]</small></h1>
 <img src="./images/alignment.svg" width="70%">
-<p>Devices within the system that execute the same part of the program are <strong>aligned</strong> and capable of communication.</p>
+<p>Devices within the system that execute the same part of the Abstract Syntax Tree are <strong>aligned</strong> and capable of communication.</p>
 <div>
 <small style="text-align: left;">
-[3] G. Audrito, F. Damiani, M. Viroli, and R. Casadei, “Run-time management of computation domains in field calculus”
+[3] G. Audrito, M. Viroli, F. Damiani, D. Pianini and J. Beal, “A Higher-Order Calculus of Computational Fields”
 </small>
 </div>
 </section><section>
 <h1 id="improving-the-simulation-performance-for-aggregate-programs-through-compiler-plugins">Improving the <strong>Simulation Performance</strong> for Aggregate Programs Through Compiler Plugins</h1>
 </section><section>
 <h1 id="simulating-_aggregate-computing_-systems">Simulating <em>Aggregate Computing</em> systems</h1>
-<p>Simulations are part of the <strong>development cycle</strong>.</p>
-<p><strong>Scalability limitation</strong>: <br>challenges in scaling simulations to hundreds or more devices simultaneously.</p>
-<p>Simulations <em>must</em> be reactive also on high scales.</p>
-</section><section>
-<h1 id="scalability-limitation">Scalability limitation</h1>
 
 <div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col text-start"><p>Resolvable by using <em>FCPP</em> <small>[4]</small>: a tool for developing Aggregate Computing programs.</p>
+    <div class="row "><div class="col col-md-8"><p>Simulations are part of the <strong>development cycle</strong>.</p>
+<p><strong>Scalability limitation</strong>: <br>challenges in scaling simulations to thousands or more devices simultaneously.</p>
+<p>Performance is paramount.</p>
+</div>
+<div class="col "><p><img src="images/simulation.webp" alt="simulation"></p>
+</div>
+</div>
+</div>
+</section><section>
+<h1 id="low-level-language-_fcpp_-small4small">Low level language: <em>FCPP</em> <small>[4]</small></h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col text-start"><p>Made for low-consumption devices.
+Expected to be fast in simulations.</p>
 <p><em>FCPP limitations</em>:</p>
 <ul>
-<li><strong>non-friendly</strong> language;</li>
-<li>aggregate <strong>base-mechanism not hidden</strong>.</li>
+<li><strong>Non-friendly</strong> language;</li>
+<li>Aggregate <strong>base-mechanism not hidden</strong>.</li>
 </ul>
 </div>
 <div class="col "><p>For example</p>
@@ -90,20 +98,42 @@ int n = nbr(CALL, 0, [&](field<int> a){
 </div>
 </section><section>
 <h1 id="alternatives">Alternatives?</h1>
+<span class="fragment "><h2 id="build-a-custom-language">Build a custom language!</h2>
+</span>
+<!-- - Create a new language: **external DSL** -->
+<!-- or -->
+<!-- - **Hide** the **alignment** at runtime with **internal DSL** -->
+</section><section>
+<h1 id="domain-specific-language-dsl">Domain Specific Language (DSL)</h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col "><h2 id="external-dsl">External DSL</h2>
 <ul>
-<li>Create a new language: <strong>external DSL</strong></li>
+<li>Self-contained language with custom syntax and semantics;</li>
+<li>Can be tailored to specific performance or scalability requirements;</li>
+<li>Harder to integrate with existing systems (needs custom tooling);</li>
+<li>Thougher learning curve.</li>
 </ul>
-<p>or</p>
+</div>
+<div class="col col-md-1"><h3 id="or">or</h3>
+</div>
+<div class="col "><h2 id="internal-dsl">Internal DSL</h2>
 <ul>
-<li><strong>Hide</strong> the <strong>alignment</strong> at runtime with <strong>internal DSL</strong></li>
+<li>Built on top of a host language;</li>
+<li>Takes advantage of its features, tools, and ecosystem.</li>
+<li>Reduced learning curve.</li>
+<li>Performances tied to the host language.</li>
 </ul>
+</div>
+</div>
+</div>
 </section><section>
 <h1 id="external-dsl-_protelis_-small5small">External DSL: <em>Protelis</em> <small>[5]</small></h1>
-<p>Java-like external DSL.</p>
-<p>Hides pretty well main aggregate computing mechanisms, such as alignment.</p>
+<p>Java-like standalone language.</p>
+<p>Hides main aggregate computing mechanisms, such as alignment.</p>
 <p><em>Protelis limitations</em>:</p>
+<!-- - being a standalone language, its interpreter and compiler are not ma -->
 <ul>
-<li>being a standalone language, its interpreter and compiler must be <strong>self-maintained</strong>;</li>
 <li><strong>slower in complex programs</strong>, due to its compiler.</li>
 </ul>
 <p>Those limitations can be overcome by leveraging on an <strong>internal DSL</strong>.</p>
@@ -114,13 +144,21 @@ int n = nbr(CALL, 0, [&](field<int> a){
 </div>
 </section><section>
 <h1 id="internal-dsl-_scafi_-small6small">Internal DSL: <em>ScaFi</em> <small>[6]</small></h1>
-<p>Scala-based internal DSL.</p>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col text-start"><p>Scala-based internal DSL.</p>
 <p>Alignment <strong>hidden at runtime</strong> doing stack investigation.</p>
 <p><em>ScaFi limitations</em>:</p>
 <ul>
 <li>still some limitations at alignment and language-level;</li>
 <li>not very performant, due to alignment management.</li>
 </ul>
+</div>
+<div class="col "><p>For example</p>
+<p><img src="images/scafi.svg" alt="scafi"></p>
+</div>
+</div>
+</div>
 <div>
 <small style="text-align: left;">
 [6] R. Casadei, M. Viroli, G. Aguzzi, and D. Pianini, “Scafi: A scala DSL and toolkit for aggregate programming”
@@ -128,7 +166,7 @@ int n = nbr(CALL, 0, [&](field<int> a){
 </div>
 </section><section>
 <h1 id="improving-the-simulation-performance-for-aggregate-programs-through-compiler-plugins-1">Improving the Simulation Performance for Aggregate Programs Through <strong>Compiler Plugins</strong></h1>
-<img src="images/SOTAtable.svg">
+<img src="images/SOTAtable.pdf">
 </section><section>
 <h1 id="idea-use-a-_compiler-plugin_">Idea: use a <em>Compiler Plugin</em></h1>
 <p>Annotates the aggregate program on a stack at compile time.</p>
@@ -149,13 +187,14 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <li>Alignment made automatically behind the scene through compiler plugin.</li>
 <li>Linked to the general purpose <em>Alchemist</em> <small>[7]</small> simulator, which can execute also <em>Protelis</em> and <em>ScaFi</em> programs.</li>
 </ul>
-<p>First implementation of the prototype DSL used to develop experiments related to the morphogenesis of plants.</p>
+<p>First implementation of the prototype DSL used to develop experiments related to the morphogenesis of plants<small>[8]</small>.</p>
 </div>
 </div>
 </div>
 <div>
 <small style="text-align: left">
-[7] D. Pianini, S. Montagna, and M. Viroli, “Chemical-oriented simulation of computational systems with ALCHEMIST”
+[7] D. Pianini, S. Montagna, and M. Viroli, “Chemical-oriented simulation of computational systems with ALCHEMIST”;<br>
+[8] A. Cortecchia, D. Pianini, G. Ciatto, and R. Casadei, "An Aggregate Vascular Morphogenesis Controller for Engingeered Self-Organising Spatial Structures".
 </small></div><small style="text-align: left">
 </small>
 </section><section>
@@ -167,7 +206,8 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <p><em>Channel with obstacles</em> <small>[8]</small>:<br>
 an algorithm to build a redundant channel between two points in a meshed network,
 avoiding obstacles and adapting to topology changes.</p>
-<img src="images/channelWithObstacles.png" width="70%">
+<iframe width="70%" height="70%&quot;" loading="eager" autoplay="true" src="images/channel.mov"></iframe>
+<!-- <img src="images/channelWithObstacles.png" width="70%"/> -->
 <!--  -->
 </div>
 <div class="col "><h2 id="results">Results</h2>
