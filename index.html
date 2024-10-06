@@ -131,7 +131,7 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <h1 id="external-dsl-_protelis_-small5small">External DSL: <em>Protelis</em> <small>[5]</small></h1>
 <p>Java-like standalone language.</p>
 <p>Hides main aggregate computing mechanisms, such as alignment.</p>
-<p><em>Protelis limitations</em>:</p>
+<p><em>Limitation</em>:</p>
 <!-- - being a standalone language, its interpreter and compiler are not ma -->
 <ul>
 <li><strong>slower in complex programs</strong>, due to its compiler.</li>
@@ -169,8 +169,8 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <img src="images/SOTAtable.pdf">
 </section><section>
 <h1 id="idea-use-a-_compiler-plugin_">Idea: use a <em>Compiler Plugin</em></h1>
-<p>Annotates the aggregate program on a stack at compile time.</p>
-<p>Devices with the same annotations in the stack are “aligned” and can communicate.</p>
+<p>Annotates the aggregate program on a stack at <strong>compile time</strong>.</p>
+<p>Devices with the <strong>same annotations in the stack</strong> are “aligned” and can communicate.</p>
 <p><em>Pros</em>:</p>
 <ul>
 <li>Expressivity untouched;</li>
@@ -184,8 +184,8 @@ int n = nbr(CALL, 0, [&](field<int> a){
 </div>
 <div class="col col-md-8 text-start"><ul>
 <li>Internal DSL in Kotlin Multiplatform;</li>
-<li>Alignment made automatically behind the scene through compiler plugin.</li>
-<li>Linked to the general purpose <em>Alchemist</em> <small>[7]</small> simulator, which can execute also <em>Protelis</em> and <em>ScaFi</em> programs.</li>
+<li><strong>Alignment</strong> made automatically <strong>behind the scene</strong> through compiler plugin.</li>
+<li><strong>Linked to</strong> the general purpose <strong><em>Alchemist</em></strong> <small>[7]</small> <strong>simulator</strong>, which can execute also <em>Protelis</em> and <em>ScaFi</em> programs.</li>
 </ul>
 <p>First implementation of the prototype DSL used to develop experiments related to the morphogenesis of plants<small>[8]</small>.</p>
 </div>
@@ -204,7 +204,7 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <div class="container w-100 m-0 p-0">
     <div class="row "><div class="col "><h2 id="reference-scenario">Reference scenario</h2>
 <p><em>Channel with obstacles</em> <small>[8]</small>:<br>
-an algorithm to build a redundant channel between two points in a meshed network,
+an algorithm to build a <strong>redundant channel between two points</strong> in a meshed network,
 avoiding obstacles and adapting to topology changes.</p>
 <iframe width="70%" height="70%&quot;" loading="eager" autoplay="true" src="images/channel.mov"></iframe>
 <!-- <img src="images/channelWithObstacles.png" width="70%"/> -->
@@ -213,7 +213,7 @@ avoiding obstacles and adapting to topology changes.</p>
 <div class="col "><h2 id="results">Results</h2>
 <ul>
 <li>External DSLs (<em>Protelis</em>) has performance disadvantages in complex programs, respect to internal DSLs (<em>Collektive</em> &amp; <em>ScaFi</em>);</li>
-<li>Compiler plugin optimizes performance between internal DSLs, thanks to the management of the alignment.</li>
+<li><strong>Compiler plugin optimizes performance</strong> between internal DSLs, thanks to the management of the alignment.</li>
 </ul>
 <img src="images/channel.svg" width="72%">
 <!-- <div class="r-stack">
@@ -240,12 +240,12 @@ avoiding obstacles and adapting to topology changes.</p>
 <h1 id="conclusion">Conclusion</h1>
 
 <div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col col-md-8"><p>This work demonstrates that the technology used within a tool affects program execution time.</p>
+    <div class="row "><div class="col col-md-8"><p>This work demonstrates that the <strong>technology used within a tool affects program execution time</strong>.</p>
 <h3 id="future-works">Future works</h3>
 <ul>
-<li>Further enhancing for efficient and faster execution across various platforms;</li>
-<li>Create a standard library of aggregate building blocks;</li>
-<li>Exploit the tool to the concept of “collective operating systems”.</li>
+<li><strong>Further enhancing</strong> for efficient and faster execution across various platforms;</li>
+<li>Create a <strong>standard library</strong> of aggregate building blocks;</li>
+<li>Exploit the tool to the concept of “<strong>collective operating systems</strong>”.</li>
 </ul>
 </div>
 <div class="col "><p><img src="images/qr.svg" alt="qr code to collective repo"></p>
