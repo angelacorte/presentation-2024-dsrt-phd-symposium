@@ -164,7 +164,7 @@ Java-like standalone language.
 
 Hides main aggregate computing mechanisms, such as alignment.
 
-*Protelis limitations*:
+*Limitation*:
 <!-- - being a standalone language, its interpreter and compiler are not ma -->
 - **slower in complex programs**, due to its compiler.
 
@@ -220,9 +220,9 @@ For example
 
 # Idea: use a _Compiler Plugin_
 
-Annotates the aggregate program on a stack at compile time.
+Annotates the aggregate program on a stack at **compile time**.
 
-Devices with the same annotations in the stack are "aligned" and can communicate.
+Devices with the **same annotations in the stack** are "aligned" and can communicate.
 
 _Pros_:
 - Expressivity untouched;
@@ -240,8 +240,8 @@ _Pros_:
 
 {{% col class="col-md-8 text-start" %}}
 - Internal DSL in Kotlin Multiplatform;
-- Alignment made automatically behind the scene through compiler plugin.
-- Linked to the general purpose _Alchemist_ <small>[7]</small> simulator, which can execute also _Protelis_ and _ScaFi_ programs.
+- **Alignment** made automatically **behind the scene** through compiler plugin.
+- **Linked to** the general purpose **_Alchemist_** <small>[7]</small> **simulator**, which can execute also _Protelis_ and _ScaFi_ programs.
 
 First implementation of the prototype DSL used to develop experiments related to the morphogenesis of plants<small>[8]</small>.
 
@@ -268,7 +268,7 @@ First implementation of the prototype DSL used to develop experiments related to
 ## Reference scenario
 
 _Channel with obstacles_ <small>[8]</small>:</br>
-an algorithm to build a redundant channel between two points in a meshed network,
+an algorithm to build a **redundant channel between two points** in a meshed network,
 avoiding obstacles and adapting to topology changes.
 
 <iframe width="70%" height=70%" loading="eager" autoplay="true" src="images/channel.mov" ></iframe>
@@ -282,7 +282,7 @@ avoiding obstacles and adapting to topology changes.
 ## Results
 
 - External DSLs (_Protelis_) has performance disadvantages in complex programs, respect to internal DSLs (_Collektive_ & _ScaFi_);
-- Compiler plugin optimizes performance between internal DSLs, thanks to the management of the alignment.
+- **Compiler plugin optimizes performance** between internal DSLs, thanks to the management of the alignment.
 
 <img src="images/channel.svg" width="72%"/>
 
@@ -315,13 +315,13 @@ avoiding obstacles and adapting to topology changes.
 {{% multicol %}}
 
 {{% col class="col-md-8" %}}
-This work demonstrates that the technology used within a tool affects program execution time.
+This work demonstrates that the **technology used within a tool affects program execution time**.
 
 ### Future works
 
-- Further enhancing for efficient and faster execution across various platforms;
-- Create a standard library of aggregate building blocks;
-- Exploit the tool to the concept of "collective operating systems".
+- **Further enhancing** for efficient and faster execution across various platforms;
+- Create a **standard library** of aggregate building blocks;
+- Exploit the tool to the concept of "**collective operating systems**".
 
 {{% /col %}}
 
