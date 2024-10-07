@@ -109,20 +109,20 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <div class="container w-100 m-0 p-0">
     <div class="row "><div class="col "><h2 id="external-dsl">External DSL</h2>
 <ul>
-<li>Self-contained language with custom syntax and semantics;</li>
-<li>Can be tailored to specific performance or scalability requirements;</li>
-<li>Harder to integrate with existing systems (needs custom tooling);</li>
-<li>Thougher learning curve.</li>
+<li>Self-contained language with <strong>custom syntax and semantics</strong>;</li>
+<li>Can be tailored to <strong>specific performance</strong> or <strong>scalability requirements</strong>;</li>
+<li><strong>Harder to integrate</strong> with existing systems (needs custom tooling);</li>
+<li><strong>Thougher</strong> learning curve.</li>
 </ul>
 </div>
 <div class="col col-md-1"><h3 id="or">or</h3>
 </div>
 <div class="col "><h2 id="internal-dsl">Internal DSL</h2>
 <ul>
-<li>Built on top of a host language;</li>
-<li>Takes advantage of its features, tools, and ecosystem.</li>
-<li>Reduced learning curve.</li>
-<li>Performances tied to the host language.</li>
+<li>Built on top of a <strong>host language</strong>;</li>
+<li>Takes <strong>advantage</strong> of its <strong>features</strong>, <strong>tools</strong>, and <strong>ecosystem</strong>.</li>
+<li><strong>Reduced</strong> learning curve.</li>
+<li><strong>Performances</strong> tied to the <strong>host language</strong>.</li>
 </ul>
 </div>
 </div>
@@ -151,7 +151,7 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <p><em>ScaFi limitations</em>:</p>
 <ul>
 <li>still some limitations at alignment and language-level;</li>
-<li>not very performant, due to alignment management.</li>
+<li>not very performant, due to runtime alignment via stack inspection.</li>
 </ul>
 </div>
 <div class="col "><p>For example</p>
@@ -166,7 +166,7 @@ int n = nbr(CALL, 0, [&](field<int> a){
 </div>
 </section><section>
 <h1 id="improving-the-simulation-performance-for-aggregate-programs-through-compiler-plugins-1">Improving the Simulation Performance for Aggregate Programs Through <strong>Compiler Plugins</strong></h1>
-<img src="images/SOTAtable.pdf">
+<img src="images/SOTAtable.svg">
 </section><section>
 <h1 id="idea-use-a-_compiler-plugin_">Idea: use a <em>Compiler Plugin</em></h1>
 <p>Annotates the aggregate program on a stack at <strong>compile time</strong>.</p>
