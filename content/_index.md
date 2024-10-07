@@ -271,7 +271,7 @@ _Channel with obstacles_ <small>[8]</small>:</br>
 an algorithm to build a **redundant channel between two points** in a meshed network,
 avoiding obstacles and adapting to topology changes.
 
-<iframe width="70%" height=70%" loading="eager" autoplay="true" src="images/channel.mov" ></iframe>
+<iframe width="70%" height=70%" loading="eager" autoplay="true" src="images/channel.mp4" ></iframe>
 
 <!-- <img src="images/channelWithObstacles.png" width="70%"/> -->
 <!--  -->
