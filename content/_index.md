@@ -132,10 +132,10 @@ int n = nbr(CALL, 0, [&](field<int> a){
 {{% col  %}}
 ## External DSL
 
-- Self-contained language with custom syntax and semantics;
-- Can be tailored to specific performance or scalability requirements;
-- Harder to integrate with existing systems (needs custom tooling);
-- Thougher learning curve.
+- Self-contained language with **custom syntax and semantics**;
+- Can be tailored to **specific performance** or **scalability requirements**;
+- **Harder to integrate** with existing systems (needs custom tooling);
+- **Thougher** learning curve.
 
 {{% /col %}}
 
@@ -146,10 +146,10 @@ int n = nbr(CALL, 0, [&](field<int> a){
 {{% col %}}
 ## Internal DSL
 
-- Built on top of a host language;
-- Takes advantage of its features, tools, and ecosystem.
-- Reduced learning curve.
-- Performances tied to the host language.
+- Built on top of a **host language**;
+- Takes **advantage** of its **features**, **tools**, and **ecosystem**.
+- **Reduced** learning curve.
+- **Performances** tied to the **host language**.
 
 {{% /col %}}
 
@@ -190,7 +190,7 @@ Alignment **hidden at runtime** doing stack investigation.
 
 *ScaFi limitations*:
 - still some limitations at alignment and language-level;
-- not very performant, due to alignment management.
+- not very performant, due to runtime alignment via stack inspection.
 {{% /col %}}
 
 {{% col %}}
@@ -214,7 +214,7 @@ For example
 
 # Improving the Simulation Performance for Aggregate Programs Through **Compiler Plugins**
 
-<img src="images/SOTAtable.pdf"/>
+<img src="images/SOTAtable.svg"/>
 
 ---
 
