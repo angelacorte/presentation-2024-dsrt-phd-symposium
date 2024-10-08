@@ -225,7 +225,7 @@ For example
 
 # Improving the Simulation Performance for Aggregate Programs Through **Compiler Plugins**
 
-<img src="images/SOTAtable.png"/>
+<img class="fragment" src="images/SOTAtable.png"/>
 
 ---
 
