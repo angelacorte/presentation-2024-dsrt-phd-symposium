@@ -60,8 +60,8 @@ GARR research fellow &amp; (soon) PhD Student @UniBo<br>
 
 <div class="container w-100 m-0 p-0">
     <div class="row "><div class="col col-md-8"><p>Simulations are part of the <strong>development cycle</strong>.</p>
-<p><strong>Scalability limitation</strong>: <br>challenges in scaling simulations to thousands or more devices simultaneously.</p>
-<p>Performance is paramount.</p>
+<p><span class="fragment "><strong>Scalability limitation</strong>: <br>challenges in scaling simulations to thousands or more devices simultaneously.</span></p>
+<p><span class="fragment ">Performance is paramount.</span></p>
 </div>
 <div class="col "><p><img src="images/simulation.webp" alt="simulation"></p>
 </div>
@@ -73,11 +73,13 @@ GARR research fellow &amp; (soon) PhD Student @UniBo<br>
 <div class="container w-100 m-0 p-0">
     <div class="row "><div class="col text-start"><p>Made for low-consumption devices.
 Expected to be fast in simulations.</p>
-<p><em>FCPP limitations</em>:</p>
+<div class="fragment">
+<em>FCPP limitations</em>: 
 <ul>
-<li><strong>Non-friendly</strong> language;</li>
-<li>Aggregate <strong>base-mechanism not hidden</strong>.</li>
+  <li><strong>Non-friendly</strong> language;</li>
+  <li>Aggregate <strong>base-mechanism not hidden</strong>.</li>
 </ul>
+</div>
 </div>
 <div class="col "><p>For example</p>
 <p><img src="images/fcpp.svg" alt="fcpp"></p>
@@ -108,35 +110,35 @@ int n = nbr(CALL, 0, [&](field<int> a){
 
 <div class="container w-100 m-0 p-0">
     <div class="row "><div class="col "><h2 id="external-dsl">External DSL</h2>
-<ul>
-<li>Self-contained language with <strong>custom syntax and semantics</strong>;</li>
-<li>Can be tailored to <strong>specific performance</strong> or <strong>scalability requirements</strong>;</li>
-<li><strong>Harder to integrate</strong> with existing systems (needs custom tooling);</li>
-<li><strong>Thougher</strong> learning curve.</li>
+<ul class="fragment">
+  <li>Self-contained language with <strong>custom syntax and semantics</strong>;</li>
+  <li>Can be tailored to <strong>specific performance</strong> or <strong>scalability requirements</strong>;</li>
+  <li><strong>Harder to integrate</strong> with existing systems (needs custom tooling);</li>
+  <li><strong>Tougher</strong> learning curve.</li>
 </ul>
 </div>
 <div class="col col-md-1"><h3 id="or">or</h3>
 </div>
 <div class="col "><h2 id="internal-dsl">Internal DSL</h2>
-<ul>
-<li>Built on top of a <strong>host language</strong>;</li>
-<li>Takes <strong>advantage</strong> of its <strong>features</strong>, <strong>tools</strong>, and <strong>ecosystem</strong>.</li>
-<li><strong>Reduced</strong> learning curve.</li>
-<li><strong>Performances</strong> tied to the <strong>host language</strong>.</li>
+<ul class="fragment">
+  <li>Built on top of a <strong>host language</strong>;</li>
+  <li>Takes <strong>advantage</strong> of its <strong>features</strong>, <strong>tools</strong>, and <strong>ecosystem</strong>.</li>
+  <li><strong>Reduced</strong> learning curve.</li>
+  <li><strong>Performances</strong> tied to the <strong>host language</strong>.</li>
 </ul>
 </div>
 </div>
 </div>
 </section><section>
 <h1 id="external-dsl-_protelis_-small5small">External DSL: <em>Protelis</em> <small>[5]</small></h1>
-<p>Java-like standalone language.</p>
+<p>Java-like <strong>standalone language</strong>.</p>
 <p>Hides main aggregate computing mechanisms, such as alignment.</p>
-<p><em>Limitation</em>:</p>
+<div class="fragment">
+<em>But</em>
 <!-- - being a standalone language, its interpreter and compiler are not ma -->
-<ul>
-<li><strong>slower in complex programs</strong>, due to its compiler.</li>
-</ul>
-<p>Those limitations can be overcome by leveraging on an <strong>internal DSL</strong>.</p>
+<b>slower in complex programs</b>, due to its compiler.
+</div>
+<p><span class="fragment ">This limit can be overcome by leveraging on an <strong>internal DSL</strong>.</span><br><br></p>
 <div>
 <small style="text-align: left;">
 [5] D. Pianini, M. Viroli, and J. Beal, “Protelis: practical aggregate programming”
@@ -148,11 +150,13 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <div class="container w-100 m-0 p-0">
     <div class="row "><div class="col text-start"><p>Scala-based internal DSL.</p>
 <p>Alignment <strong>hidden at runtime</strong> doing stack investigation.</p>
-<p><em>ScaFi limitations</em>:</p>
+<div class="fragment">
+<em>ScaFi limitations</em>:
 <ul>
-<li>still some limitations at alignment and language-level;</li>
-<li>not very performant, due to runtime alignment via stack inspection.</li>
+  <li>still some limitations at alignment and language-level;</li>
+  <li>not very performant, due to runtime alignment via stack inspection.</li>
 </ul>
+</div>
 </div>
 <div class="col "><p>For example</p>
 <p><img src="images/scafi.svg" alt="scafi"></p>
@@ -166,17 +170,19 @@ int n = nbr(CALL, 0, [&](field<int> a){
 </div>
 </section><section>
 <h1 id="improving-the-simulation-performance-for-aggregate-programs-through-compiler-plugins-1">Improving the Simulation Performance for Aggregate Programs Through <strong>Compiler Plugins</strong></h1>
-<img src="images/SOTAtable.png">
+<!-- <img src="images/SOTAtable.png"/> -->
 </section><section>
 <h1 id="idea-use-a-_compiler-plugin_">Idea: use a <em>Compiler Plugin</em></h1>
 <p>Annotates the aggregate program on a stack at <strong>compile time</strong>.</p>
 <p>Devices with the <strong>same annotations in the stack</strong> are “aligned” and can communicate.</p>
-<p><em>Pros</em>:</p>
+<div class="fragment">
+<em>Pros</em>:<br>
 <ul>
-<li>Expressivity untouched;</li>
-<li>No overhead of the classic approaches.</li>
+  <li>Expressivity untouched;</li>
+  <li>No overhead of the classic approaches.</li>
 </ul>
-</section><section>
+<div>
+</div></div></section><section>
 <h1 id="meet-collektive">Meet <strong>Collektive</strong></h1>
 
 <div class="container w-100 m-0 p-0">
@@ -206,16 +212,18 @@ int n = nbr(CALL, 0, [&](field<int> a){
 <p><em>Channel with obstacles</em> <small>[8]</small>:<br>
 an algorithm to build a <strong>redundant channel between two points</strong> in a meshed network,
 avoiding obstacles and adapting to topology changes.</p>
-<iframe width="70%" height="70%&quot;" loading="eager" autoplay="true" src="images/channel.mp4"></iframe>
+<iframe class="fragment" width="70%" height="70%&quot;" loading="eager" autoplay="true" src="images/channel.mp4"></iframe>
 <!-- <img src="images/channelWithObstacles.png" width="70%"/> -->
 <!--  -->
 </div>
-<div class="col "><h2 id="results">Results</h2>
+<div class="col "><div class="fragment">
+<h2>Results</h2>
 <ul>
-<li>External DSLs (<em>Protelis</em>) has performance disadvantages in complex programs, respect to internal DSLs (<em>Collektive</em> &amp; <em>ScaFi</em>);</li>
-<li><strong>Compiler plugin optimizes performance</strong> between internal DSLs, thanks to the management of the alignment.</li>
+  <li>External DSLs (<em>Protelis</em>) has performance disadvantages in complex programs, respect to internal DSLs (<em>Collektive</em> &amp; <em>ScaFi</em>);</li>
+  <li><strong>Compiler plugin optimizes performance</strong> between internal DSLs, thanks to the management of the alignment.</li>
 </ul>
 <img src="images/channel.svg" width="72%">
+</div>
 <!-- <div class="r-stack">
   <img
     class="fragment current-visible fade-out"
@@ -232,7 +240,7 @@ avoiding obstacles and adapting to topology changes.</p>
 </div>
 </div>
 <div>
-<small style="text-align: left">
+<small style="text-align: left"><br><br>
 [8] R. Casadei, G. Fortino, D. Pianini, A. Placuzzi, C. Savaglio, and M. Viroli, “A methodology and simulation-based toolchain for estimating deployment performance of smart collective services at the edge"
 </small>
 </div>
@@ -241,12 +249,14 @@ avoiding obstacles and adapting to topology changes.</p>
 
 <div class="container w-100 m-0 p-0">
     <div class="row "><div class="col col-md-8"><p>This work demonstrates that the <strong>technology used within a tool affects program execution time</strong>.</p>
-<h3 id="future-works">Future works</h3>
+<div class="fragment">
+<h3>Future works</h3>
 <ul>
-<li><strong>Further enhancing</strong> for efficient and faster execution across various platforms;</li>
-<li>Create a <strong>standard library</strong> of aggregate building blocks;</li>
-<li>Exploit the tool to the concept of “<strong>collective operating systems</strong>”.</li>
+  <li><strong>Further enhancing</strong> for efficient and faster execution across various platforms;</li>
+  <li>Create a <strong>standard library</strong> of aggregate building blocks;</li>
+  <li>Exploit the tool to the concept of "<strong>collective operating systems</strong>".</li>
 </ul>
+</div>
 </div>
 <div class="col "><p><img src="images/qr.svg" alt="qr code to collective repo"></p>
 <div style="text-align: center;">
