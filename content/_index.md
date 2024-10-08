@@ -63,9 +63,9 @@ Devices within the system that execute the same part of the Abstract Syntax Tree
 {{% col class="col-md-8" %}}
 Simulations are part of the **development cycle**.
 
-**Scalability limitation**: </br>challenges in scaling simulations to thousands or more devices simultaneously.
+{{< frag c="**Scalability limitation**: </br>challenges in scaling simulations to thousands or more devices simultaneously." >}}
 
-Performance is paramount.
+{{< frag c="Performance is paramount." >}}
 {{% /col %}}
 
 {{% col %}}
@@ -86,10 +86,13 @@ Performance is paramount.
 Made for low-consumption devices.
 Expected to be fast in simulations.
 
-*FCPP limitations*: 
-- **Non-friendly** language;
-- Aggregate **base-mechanism not hidden**.
-
+<div class="fragment">
+<em>FCPP limitations</em>: 
+<ul>
+  <li><strong>Non-friendly</strong> language;</li>
+  <li>Aggregate <strong>base-mechanism not hidden</strong>.</li>
+</ul>
+</div>
 {{% /col %}}
 {{% col %}}
 
@@ -132,11 +135,12 @@ int n = nbr(CALL, 0, [&](field<int> a){
 {{% col  %}}
 ## External DSL
 
-- Self-contained language with **custom syntax and semantics**;
-- Can be tailored to **specific performance** or **scalability requirements**;
-- **Harder to integrate** with existing systems (needs custom tooling);
-- **Thougher** learning curve.
-
+<ul class="fragment">
+  <li>Self-contained language with <strong>custom syntax and semantics</strong>;</li>
+  <li>Can be tailored to <strong>specific performance</strong> or <strong>scalability requirements</strong>;</li>
+  <li><strong>Harder to integrate</strong> with existing systems (needs custom tooling);</li>
+  <li><strong>Tougher</strong> learning curve.</li>
+</ul>
 {{% /col %}}
 
 {{% col class="col-md-1"%}}
@@ -146,13 +150,13 @@ int n = nbr(CALL, 0, [&](field<int> a){
 {{% col %}}
 ## Internal DSL
 
-- Built on top of a **host language**;
-- Takes **advantage** of its **features**, **tools**, and **ecosystem**.
-- **Reduced** learning curve.
-- **Performances** tied to the **host language**.
-
+<ul class="fragment">
+  <li>Built on top of a <strong>host language</strong>;</li>
+  <li>Takes <strong>advantage</strong> of its <strong>features</strong>, <strong>tools</strong>, and <strong>ecosystem</strong>.</li>
+  <li><strong>Reduced</strong> learning curve.</li>
+  <li><strong>Performances</strong> tied to the <strong>host language</strong>.</li>
+</ul>
 {{% /col %}}
-
 
 {{% /multicol %}}
 
@@ -160,15 +164,17 @@ int n = nbr(CALL, 0, [&](field<int> a){
 
 # External DSL: _Protelis_ <small>[5]</small>
 
-Java-like standalone language.
+Java-like **standalone language**.
 
 Hides main aggregate computing mechanisms, such as alignment.
 
-*Limitation*:
+<div class="fragment">
+<em>But</em>
 <!-- - being a standalone language, its interpreter and compiler are not ma -->
-- **slower in complex programs**, due to its compiler.
+<b>slower in complex programs</b>, due to its compiler.
+</div>
 
-Those limitations can be overcome by leveraging on an **internal DSL**.
+{{< frag c="This limit can be overcome by leveraging on an **internal DSL**." >}}<br><br>
 
 <div>
 <small style="text-align: left;">
@@ -188,9 +194,13 @@ Scala-based internal DSL.
 
 Alignment **hidden at runtime** doing stack investigation.
 
-*ScaFi limitations*:
-- still some limitations at alignment and language-level;
-- not very performant, due to runtime alignment via stack inspection.
+<div class="fragment">
+<em>ScaFi limitations</em>:
+<ul>
+  <li>still some limitations at alignment and language-level;</li>
+  <li>not very performant, due to runtime alignment via stack inspection.</li>
+</ul>
+</div>
 {{% /col %}}
 
 {{% col %}}
@@ -214,7 +224,7 @@ For example
 
 # Improving the Simulation Performance for Aggregate Programs Through **Compiler Plugins**
 
-<img src="images/SOTAtable.png"/>
+<!-- <img src="images/SOTAtable.png"/> -->
 
 ---
 
@@ -224,9 +234,13 @@ Annotates the aggregate program on a stack at **compile time**.
 
 Devices with the **same annotations in the stack** are "aligned" and can communicate.
 
-_Pros_:
-- Expressivity untouched;
-- No overhead of the classic approaches.
+<div class="fragment">
+<em>Pros</em>:<br>
+<ul>
+  <li>Expressivity untouched;</li>
+  <li>No overhead of the classic approaches.</li>
+</ul>
+<div>
 
 ---
 
@@ -271,20 +285,21 @@ _Channel with obstacles_ <small>[8]</small>:</br>
 an algorithm to build a **redundant channel between two points** in a meshed network,
 avoiding obstacles and adapting to topology changes.
 
-<iframe width="70%" height=70%" loading="eager" autoplay="true" src="images/channel.mp4" ></iframe>
+<iframe class="fragment" width="70%" height=70%" loading="eager" autoplay="true" src="images/channel.mp4" ></iframe>
 
 <!-- <img src="images/channelWithObstacles.png" width="70%"/> -->
 <!--  -->
 {{% /col %}}
 
 {{% col %}}
-
-## Results
-
-- External DSLs (_Protelis_) has performance disadvantages in complex programs, respect to internal DSLs (_Collektive_ & _ScaFi_);
-- **Compiler plugin optimizes performance** between internal DSLs, thanks to the management of the alignment.
-
+<div class="fragment">
+<h2>Results</h2>
+<ul>
+  <li>External DSLs (<em>Protelis</em>) has performance disadvantages in complex programs, respect to internal DSLs (<em>Collektive</em> & <em>ScaFi</em>);</li>
+  <li><strong>Compiler plugin optimizes performance</strong> between internal DSLs, thanks to the management of the alignment.</li>
+</ul>
 <img src="images/channel.svg" width="72%"/>
+</div>
 
 <!-- <div class="r-stack">
   <img
@@ -303,7 +318,7 @@ avoiding obstacles and adapting to topology changes.
 {{% /multicol %}}
 
 <div>
-<small style="text-align: left">
+<small style="text-align: left"><br><br>
 [8] R. Casadei, G. Fortino, D. Pianini, A. Placuzzi, C. Savaglio, and M. Viroli, “A methodology and simulation-based toolchain for estimating deployment performance of smart collective services at the edge"
 </small>
 </div>
@@ -317,11 +332,15 @@ avoiding obstacles and adapting to topology changes.
 {{% col class="col-md-8" %}}
 This work demonstrates that the **technology used within a tool affects program execution time**.
 
-### Future works
+<div class="fragment">
+<h3>Future works</h3>
 
-- **Further enhancing** for efficient and faster execution across various platforms;
-- Create a **standard library** of aggregate building blocks;
-- Exploit the tool to the concept of "**collective operating systems**".
+<ul>
+  <li><strong>Further enhancing</strong> for efficient and faster execution across various platforms;</li>
+  <li>Create a <strong>standard library</strong> of aggregate building blocks;</li>
+  <li>Exploit the tool to the concept of "<strong>collective operating systems</strong>".</li>
+</ul>
+</div>
 
 {{% /col %}}
 
