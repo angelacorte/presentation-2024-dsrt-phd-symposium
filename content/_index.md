@@ -197,7 +197,8 @@ Alignment **hidden at runtime** doing stack investigation.
 <div class="fragment">
 <em>ScaFi limitations</em>:
 <ul>
-  <li>still some limitations at alignment and language-level;</li>
+  <li>base aggregate operations must be done inside specific contexts;</li>
+  <!-- <li>still some limitations at alignment and language-level;</li> -->
   <li>not very performant, due to runtime alignment via stack inspection.</li>
 </ul>
 </div>
@@ -224,7 +225,7 @@ For example
 
 # Improving the Simulation Performance for Aggregate Programs Through **Compiler Plugins**
 
-<!-- <img src="images/SOTAtable.png"/> -->
+<img src="images/SOTAtable.png"/>
 
 ---
 
